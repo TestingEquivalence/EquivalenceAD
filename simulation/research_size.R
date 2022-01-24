@@ -1,25 +1,22 @@
 source("testStatistic.R")
 source("asymptoticTest.R")
+source("size.R")
 source("asymptoticTestBootstrapVariance.R")
 source("empiricalBootstrapTest.R")
 source("BootstrapTestTPercentile.R")
-
-set.seed(18032021)
-n=50
-x=runif(n)
 
 F<-function(x){
   x
 }
 
 parameter=list()
-parameter$x=x
 parameter$F=F
 parameter$alpha=0.05
+parameter$n=1000 
 parameter$nSimulation=1000
 
-asymptoticTest(parameter)
+nSimulation=1000
 
-asymptoticTestBootstrapVariance(parameter)
-empiricalBootstrapTest(parameter)
-tPercentileBootstrapTest(parameter)
+res=simulatePowerAtUniform(asymptoticTest, parameter, nSimulation)
+fn=paste0("size_as_",parameter$n,".csv")
+write.csv(res,fn)

@@ -36,7 +36,7 @@ F<-function(x){
 }
 
 
-n=500
+n=1000
 av<-function(i){
   res=rbeta(n, 1, 2)
   res=uTransform(res,F)
