@@ -1,6 +1,6 @@
 source("testStatistic.R")
 source("asymptoticTest.R")
-source("size.R")
+source("simulation/size.R")
 source("asymptoticTestBootstrapVariance.R")
 source("empiricalBootstrapTest.R")
 source("BootstrapTestTPercentile.R")
@@ -12,7 +12,7 @@ F<-function(x){
 parameter=list()
 parameter$F=F
 parameter$alpha=0.05
-parameter$n=1000 
+parameter$n=200
 parameter$nSimulation=1000
 
 nSimulation=1000
