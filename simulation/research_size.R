@@ -12,11 +12,11 @@ F<-function(x){
 parameter=list()
 parameter$F=F
 parameter$alpha=0.05
-parameter$n=200
+parameter$n=100
 parameter$nSimulation=1000
 
 nSimulation=1000
 
-res=simulatePowerAtUniform(asymptoticTest, parameter, nSimulation)
+res=simulatePowerAtUniform(tPercentileBootstrapTest, parameter, nSimulation)
 fn=paste0("size_as_",parameter$n,".csv")
 write.csv(res,fn)
