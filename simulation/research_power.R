@@ -6,8 +6,8 @@ source("empiricalBootstrapTest.R")
 source("BootstrapTestTPercentile.R")
 source("distributions/alternatives.R")
 
-#1:27
-for (pointNr in c(1:27)){
+
+
   
   
   lsCDF=listCDF()
@@ -43,5 +43,5 @@ for (pointNr in c(1:27)){
     fn=paste0("power_EB_",pointNr,"_n_",parameter$n,".csv")
     write.csv(res,fn)
   }
-}
+  
  
