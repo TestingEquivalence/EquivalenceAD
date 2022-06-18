@@ -25,6 +25,10 @@ for (pointNr in c(1:27)){
     lsCDF[[pointNr]](x)
   }
   
+  #check the point
+  dst=theoreticADDistance(H,G)
+  if (dst$value<epsilon) {next}
+  
   #find mixed boundary point
   w=boundaryPoint(epsilon, G)
   
