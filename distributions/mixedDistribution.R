@@ -15,8 +15,8 @@ rMixed<-function(n,w,rF,rG){
   return(res)
 }
 
-boundaryPoint<-function(epsilon,G){
-  H<-function(x){
+boundaryPoint<-function(epsilon,H){
+  G<-function(x){
     x
   }
   
@@ -25,7 +25,7 @@ boundaryPoint<-function(epsilon,G){
       pMixed(x,w,H,G)
     }
 
-    dst=theoreticADDistance(CDF,H)$value
+    dst=theoreticADDistance(CDF,G)$value
     return(dst-epsilon)
   }
   

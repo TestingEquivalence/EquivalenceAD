@@ -11,17 +11,17 @@ source("distributions/mixedDistribution.R")
 for (pointNr in c(1:27)){
   
   
-  epsilon=0.02
+  epsilon=0.10
   n=50
   
   lsCDF=listCDF()
   lsR=listRDG()
   
-  H<-function(x){
+  G<-function(x){
     x
   }
   
-  G<-function(x){
+  H<-function(x){
     lsCDF[[pointNr]](x)
   }
   
@@ -30,30 +30,30 @@ for (pointNr in c(1:27)){
   if (dst$value<epsilon) {next}
   
   #find mixed boundary point
-  w=boundaryPoint(epsilon, G)
+  w=boundaryPoint(epsilon, H)
   
   #check the boundary point
   mixedF<-function(x){
     pMixed(x,w,H,G)
   }
   
-  theoreticCMDistance(H,mixedF)
+  check=theoreticADDistance(mixedF,G)$value
   
   #define generator for the boundary point
   rDistribution<-function(x){
-    rMixed(n,w,runif,lsR[[pointNr]])
+    rMixed(n,w,lsR[[pointNr]],runif)
   }
   
   parameter=list()
-  parameter$F=H
+  parameter$F=G
   parameter$alpha=0.05
   parameter$n=n
   parameter$nSimulation=1000
   
   nSimulation=1000
   
-  res=simulatePower(asymptoticTestBootstrapVariance, parameter, nSimulation, rDistribution)
-  fn=paste0("power_ABV_",pointNr,"_n_",parameter$n,".csv")
+  res=simulatePower(asymptoticTest, parameter, nSimulation, rDistribution)
+  fn=paste0("power_AT_",pointNr,"_n_",parameter$n,".csv")
   write.csv(res,fn)
 }
 
