@@ -8,7 +8,7 @@ source("distributions/alternatives.R")
 source("distributions/mixedDistribution.R")
 
 #1:27
-for (pointNr in c(1:27)){
+for (pointNr in c(2)){
   
   
   epsilon=0.10

@@ -2,15 +2,26 @@ simulatePower<-function(test, parameter, nSimulation,rDistribution){
   set.seed(10071977)
   
   sim=list()
-  for (i in c(1:nSimulation)){
+  for (i in c(1:(nSimulation+10))){
     sim[[i]]=rDistribution(parameter$n)
   }
   
   res=rep(0,nSimulation)
-  for (i in c(1:nSimulation)){
+  
+  j=1
+  i=1
+  while(i<=nSimulation){
     parameter$x=sim[[i]]
-    res[i]=test(parameter)
-    print(i)
+    tryCatch({
+        res[i]=test(parameter)
+        print(c(i,j))
+        i=i+1
+        j=j+1
+      }, 
+    error=function(e){
+      j=j+1
+    },finally = {})
+   
     
   }
   
