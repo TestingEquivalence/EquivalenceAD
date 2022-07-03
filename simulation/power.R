@@ -11,7 +11,7 @@ simulatePower<-function(test, parameter, nSimulation,rDistribution){
   j=1
   i=1
   while(i<=nSimulation){
-    parameter$x=sim[[i]]
+    parameter$x=sim[[j]]
     tryCatch({
         res[i]=test(parameter)
         print(c(i,j))
@@ -20,7 +20,11 @@ simulatePower<-function(test, parameter, nSimulation,rDistribution){
       }, 
     error=function(e){
       j=j+1
-    },finally = {})
+      print("error")
+      print(j)
+    },finally = {
+      print("ok")
+    })
    
     
   }

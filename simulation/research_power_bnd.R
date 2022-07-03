@@ -11,8 +11,8 @@ source("distributions/mixedDistribution.R")
 for (pointNr in c(2)){
   
   
-  epsilon=0.10
-  n=50
+  epsilon=0.05
+  n=100
   
   lsCDF=listCDF()
   lsR=listRDG()
