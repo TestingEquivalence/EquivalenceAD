@@ -8,7 +8,7 @@ source("distributions/alternatives.R")
 source("distributions/mixedDistribution.R")
 
 #1:27
-for (pointNr in c(2)){
+for (pointNr in c(10)){
   
   
   epsilon=0.05
@@ -52,7 +52,7 @@ for (pointNr in c(2)){
   
   nSimulation=1000
   
-  res=simulatePower(asymptoticTest, parameter, nSimulation, rDistribution)
+  res=simulatePower(tPercentileBootstrapTest, parameter, nSimulation, rDistribution)
   fn=paste0("power_AT_",pointNr,"_n_",parameter$n,".csv")
   write.csv(res,fn)
 }

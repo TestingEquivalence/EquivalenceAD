@@ -19,11 +19,11 @@ simulatePower<-function(test, parameter, nSimulation,rDistribution){
         j=j+1
       }, 
     error=function(e){
-      j=j+1
       print("error")
       print(j)
+      j=j+1
+      print(j)
     },finally = {
-      print("ok")
     })
    
     
