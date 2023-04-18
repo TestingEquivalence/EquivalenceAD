@@ -1,2 +1,2 @@
 # EquivalenceNormalAD
-testing equivalence to normal distribution usind Andersen Darling statistic
+testing equivalence to uniform distribution usind Andersen Darling statistic
