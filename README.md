@@ -8,10 +8,9 @@ Vol. 2, No. 2, 2023, pp. 147-159
 © ARF India. All Right Reserved
 open acces to article under:
 URL : https://www.arfjournals.com/statistics/jscs
-https://doi.org/10.47509/JSCS.2023.v02i02.06
 
 A preprint is available under:
-???
+https://www.researchgate.net/publication/377805211_Equivalence_tests_based_on_weighted_L_2_-distance_between_cumulative_distribution_functions
 
 Abstract:
 We introduce a new family of equivalence tests for a fully specified continuous distribution on the real line. 
