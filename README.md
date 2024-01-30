@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project belongs to a published article:
 
 Vladimir Ostrovski,
@@ -51,3 +52,7 @@ called  equivalence test. Three variants of the equivalence test are given:
 
 
 
+=======
+# EquivalenceNormalAD
+testing equivalence to uniform distribution using Andersen Darling statistic
+>>>>>>> bfe65a7312816b0a96443f3e82cda8dd48c46225
