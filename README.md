@@ -36,7 +36,7 @@ We observe a sample of n independent identically distributed random numbers, whi
 Let d(F,G) denote the weighted L_2-distance between cumulative distribution functions F and G. 
 Then the equivalence test problem is defined by
 H0={d(F,G)>epsilon} versus H1={d(F,G)<=epsilon}
-for the tolerance parameter epsilon>0.
+for a tolerance parameter epsilon>0.
 
 If the hypothesis H0 can be rejected based on the observed data only for 
 a sufficiently small value of epsilon, then the true 
@@ -46,7 +46,7 @@ This code provides a significance test for the equivalence tests problem,
 called  equivalence test. Three variants of the equivalence test are given:
 - asymptotic test, where the critical value is computed using the asymptotic approximation;
 - asymptotic test where the variance of the test statistic is estimated by bootstrap;
-- percentile-t bootstrap test, whre the critical value is computed by percentile-t bootstrap method.
+- percentile-t bootstrap test, where the critical value is computed by percentile-t bootstrap method.
 
 
 

@@ -5,26 +5,28 @@ source("BootstrapTestTPercentile.R")
 source("simulation/power.R")
 
 # Application of the equivalence test to the uniform distribution on [0,1],
-# i.e. the we compare the true underlying distribution of the random sample
+# i.e. we compare the true underlying distribution of the random sample
 # with the uniform distribution on [0, 1].
-# You can apply the test to compare with any other fixed distribution similarly.
+# Instead of the uniform distribution you can apply the test 
+# to compare with any other fixed distribution similarly.
 
 # Cumulative distribution function (CDF) of the uniform distribution on [0,1]. 
 F<-function(x){
   x
 }
 
-# Parameter for the equivalence test:
+# Parameter of the equivalence test:
 parameter=list()
 parameter$F=F # CDF of uniform distribution on [0,1]
-parameter$alpha=0.05 # significance level for the test
-parameter$n=100 # number of observations in sample
+parameter$alpha=0.05 # significance level of the test
 parameter$nSimulation=1000 # number of samples in case of bootstrap test
 
 # First we apply the equivalence test to the random sample from the uniform distribution. 
 # Simulate a sample from the uniform distribution on [0,1].
+
 set.seed(30122023)
-parameter$x=runif(parameter$n)
+n=100 # number of observations in sample
+parameter$x=runif(n) # random numbers from the uniform distribution
 
 # Apply 3 variants of the equivalence test. 
 # Each test version return the minimum value of the tolerance parameter epsilon,
@@ -52,7 +54,7 @@ theoreticADDistance(F, Q)
 
 # Simulate a sample from the beta(p,q)
 set.seed(30122023)
-parameter$x=rbeta(parameter$n,p,q)
+parameter$x=rbeta(n,p,q)
 
 # Perform 3 variants of the equivalence test: 
  
