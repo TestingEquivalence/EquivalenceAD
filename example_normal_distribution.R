@@ -11,7 +11,7 @@ F<-function(x){
   pnorm(x,mean=0, sd=1)
 }
 
-# Version 1 : mean of variance of sample distribution are known to be 0 and 1. 
+# Version 1 : mean and variance of sample distribution are known to be 0 and 1. 
 
 parameter=list() # a list named parameter, this will store parameters of the equivalence test
 parameter$F=F # theoretical distribution, G in the paper
